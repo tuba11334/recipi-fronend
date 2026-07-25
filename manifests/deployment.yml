@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: recipifrontend 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: recipifrontend
+  template:
+    metadata:
+      labels:
+        app: recipifrontend 
+    spec:
+      containers:
+        - name: recipifrontend 
+          image: recipifrondacr.azurecr.io/recipifrontend
+          ports:
+          - containerPort: 80
